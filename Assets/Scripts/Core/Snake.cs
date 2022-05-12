@@ -134,14 +134,35 @@ public class Snake : MonoBehaviour
         int randNum = Random.Range(0, _numberOfTiles);
         if (alltiles[randNum].CheckNum == 0)
         {
-            _curTile = randNum;
-            alltiles[randNum].SetTileColor(_colorsData.SnakeHeadTileColor);
-            alltiles[randNum].CheckNum = 1;
+            _curTile = CheckSpawnPoint(randNum);
+            Debug.Log(_curTile);
+            alltiles[_curTile].SetTileColor(_colorsData.SnakeHeadTileColor);
+            alltiles[_curTile].CheckNum = 1;
         }
         else
         {
             SpawnSnake();
         }
+    }
+    private int CheckSpawnPoint(int rand) 
+    {
+        if(rand < 3 * _numberOfRow) 
+        {
+            rand += 4 * _numberOfRow;
+        }
+        else if(rand >= _numberOfTiles - 3 * _numberOfRow)
+        {
+            rand -= 4 * _numberOfRow;
+        }
+        if (rand % _numberOfColumn < 3)
+        {
+            rand += 4;
+        }
+        else if (rand % _numberOfColumn > _numberOfColumn - 3)
+        {
+            rand -= 4;
+        }
+        return rand;
     }
     private void SnakeMove()
     {
