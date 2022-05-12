@@ -33,6 +33,7 @@ public class Snake : MonoBehaviour
     private bool _paused = true;
 
     private Coroutine _snakeStep;
+
     private void OnEnable()
     {
         _playerController.OnEscClick += ShowPause;
@@ -49,7 +50,6 @@ public class Snake : MonoBehaviour
         _paused = false;
         _snakeStep = StartCoroutine(SnakeStep());
     }
-
     public void SetData(int numOfColumn, int numOfRow, bool walls)
     {
         _numberOfColumn = numOfColumn;
@@ -63,8 +63,6 @@ public class Snake : MonoBehaviour
         alltiles = _gridBuilder.CreateGrid(_numberOfRow, _numberOfColumn, _colorsData, walls);
         StartGame();
     }
-
-    // Update is called once per frame
     private IEnumerator SnakeStep()
     {
         while (!_paused)

@@ -23,7 +23,6 @@ public class Menu : MonoBehaviour
         _gameManager.SetData(numberOfColumn, numberOfRow, _walls.isOn);
         gameObject.SetActive(false);
     }
-
     private void SetNumOfColumn() 
     {
         if (_numOfColumn.text != "")
