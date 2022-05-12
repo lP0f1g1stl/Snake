@@ -133,7 +133,6 @@ public class Snake : MonoBehaviour
         if (alltiles[randNum].CheckNum == 0)
         {
             _curTile = CheckSpawnPoint(randNum);
-            Debug.Log(_curTile);
             alltiles[_curTile].SetTileColor(_colorsData.SnakeHeadTileColor);
             alltiles[_curTile].CheckNum = 1;
         }
