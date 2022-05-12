@@ -57,7 +57,7 @@ public class Menu : MonoBehaviour
         {
             numberOfRow = 10;
         }
-        if (numberOfRow < 25)
+        if (numberOfRow > 25)
         {
             numberOfRow = 25;
         }

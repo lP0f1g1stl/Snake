@@ -2304,6 +2304,7 @@ GameObject:
   - component: {fileID: 2048030053}
   - component: {fileID: 2048030052}
   - component: {fileID: 2048030054}
+  - component: {fileID: 2048030055}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2330,7 +2331,10 @@ MonoBehaviour:
   _dispscore: {fileID: 1635915229}
   _loseScreen: {fileID: 744584835}
   _playerController: {fileID: 2048030054}
+  _gridBuilder: {fileID: 2048030055}
   _colorsData: {fileID: 11400000, guid: b4b5ecf3f8f690e4aae8f3c30d2588ff, type: 2}
+  _numberOfTiles: 0
+  _currentTimeStep: 0
 --- !u!4 &2048030053
 Transform:
   m_ObjectHideFlags: 0
@@ -2358,3 +2362,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentDirection: 0
+--- !u!114 &2048030055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048030051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5497501150398a14ab86ce25e49206b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tile: {fileID: 2089464715863557911, guid: bdc7942fecc115a45859df3d2303a275, type: 3}
+  _distance: 1
