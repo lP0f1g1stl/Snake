@@ -21,14 +21,14 @@ public class Snake : MonoBehaviour
 
     Tile[] alltiles;
 
-    [SerializeField]private int _numberOfTiles;
+    private int _numberOfTiles;
     private int _numberOfRow;
     private int _numberOfColumn;
     private int _curTile;
     private int _prevTile;
     private int _score;
 
-    [SerializeField] private float _currentTimeStep;
+    private float _currentTimeStep;
 
     private bool _paused = true;
 
@@ -60,7 +60,6 @@ public class Snake : MonoBehaviour
             _numberOfColumn += 2;
         }
         _numberOfTiles = _numberOfRow * _numberOfColumn;
-        Debug.Log(_numberOfTiles);
         alltiles = _gridBuilder.CreateGrid(_numberOfRow, _numberOfColumn, _colorsData, walls);
         StartGame();
     }
@@ -146,7 +145,6 @@ public class Snake : MonoBehaviour
     }
     private void SnakeMove()
     {
-        Debug.Log(_curTile);
         if (alltiles[_curTile].CheckNum < 1 && alltiles[_curTile].CheckNum > -3)
         {
             alltiles[_curTile].SetTileColor(_colorsData.SnakeHeadTileColor);
