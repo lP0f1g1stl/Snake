@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Snake : MonoBehaviour
 {
     [SerializeField] private Tile _tile;
-    [SerializeField] private int _distance = 1;
     [SerializeField] private float _snakeTimeStep = 1f;
     [Space]
     [SerializeField] private int _numOfPart = 3;
